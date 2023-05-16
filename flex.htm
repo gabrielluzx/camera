@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        video {transform: translateY(180deg);}
         body {
             margin: 0;
             counter-reset: childs;
@@ -70,6 +71,7 @@
             <div class="flex-child"></div>
         </div>
     </div>
+    <button type="button" onclick="document.getElementById('videoElement').play()"></button>
     <video id="videoElement" autoplay></video>
     <script src="./js/teste_camera.js"></script>
 </body>
