@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            counter-reset: childs;
+        }
+        /*Para iniciar um container flex usamos display:flex
+
+          Para escolher a direção dos itens de um container (chamados flex items) usamos a propriedade flex-direction
+          (valores row(padão), column, row-reverse e column-reverse)
+
+          Para decidir se os flex items irão quebrar de linha ou diminuir para caber no container temos a propriedade flex-wrap. (valores wrap e nowrap)
+
+          Para as propriedades acima temos o shorthand flex-flow.
+
+          
+
+        */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #606060;
+        }
+        .child-container {
+            margin: 3px;
+            display: flex;
+            align-items: baseline;
+            background-color: blueviolet;
+        }
+        .flex-child {
+            align-self:baseline;
+            margin: 3px;
+            background-color: skyblue;
+            width: 200px;
+            height: 200px;
+            box-sizing: border-box;
+            counter-increment: childs;
+            text-align: center;
+        }
+        .flex-child::after {
+            content: counter(childs);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="child-container">
+            <div class="flex-child"></div>
+            <div class="flex-child"></div>
+            <div class="flex-child"></div>
+            <div class="flex-child"></div>
+        </div>
+        <div class="child-container">
+            <div class="flex-child"></div>
+            <div class="flex-child"></div>
+            <div class="flex-child"></div>
+            <div class="flex-child"></div>
+        </div>
+        <div class="child-container">
+            <div class="flex-child"></div>
+            <div class="flex-child"></div>
+            <div class="flex-child"></div>
+            <div class="flex-child"></div>
+        </div>
+    </div>
+    <div id="videoElement" style="height:500px;"></div>
+    <script src="./js/teste_camera.js"></script>
+</body>
+</html>
